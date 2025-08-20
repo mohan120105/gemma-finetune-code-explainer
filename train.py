@@ -29,7 +29,7 @@ def main():
     
     # --- 3. LOAD DATASET AND PREPARE ---
     print("Loading and preparing dataset...")
-    dataset = load_dataset("json", data_files=f"Code_Alpaca_20k.json", split="train") # Assumes dataset JSON is in the same folder
+    dataset = load_dataset("json", data_files=f"Code_Alpaca_20k.json", split="train") 
 
     def format_and_tokenize(example):
         prompt = f"""### Instruction:
@@ -106,7 +106,7 @@ def main():
     print("Training complete!")
     
     # --- 6. SAVE AND PUSH FINAL MODEL ---
-    final_model_name = "YourHuggingFaceUsername/gemma-2b-code-explainer-final" #<-- REPLACE USERNAME
+    final_model_name = "mohan1201/gemma-2b-code-explainer-final" 
     print(f"Saving and pushing final model to {final_model_name}...")
     trainer.push_to_hub(final_model_name)
     print("Process complete!")
